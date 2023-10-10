@@ -1,5 +1,6 @@
 from tkinter import *
 from time import strftime
+import os
 
 
 def atualizar_relogio():
@@ -9,12 +10,14 @@ def atualizar_relogio():
     """
     horario_atual = strftime("%H:%M:%S")  # Acessa o horário atual do usuário no formato Hora:Minuto:Segundo
     label_relogio.config(text=horario_atual)  # Define o texto da label como o horário atual (str horario_atual)
-    label_relogio.after(1000, atualizar_relogio)  # Atualiza o relógio a cada 1000ms (1seg)
+    label_relogio.after(1000, atualizar_relogio)  # Atualiza o relógio a cada 1000ms (1seg), parando a função anterior
+    # e começando uma nova
 
 
 window = Tk()  # Cria uma nova janela
 
-icon = PhotoImage(file="src\\icon.png")  # Converte a imagem para um PhotoImage
+icon = PhotoImage(file=os.path.join("./assets/icon.png"))  # Converte a imagem para um PhotoImage
+# os.path evita o uso de "\" para acessar diretório, assim evitando erro em sistemas linux
 
 window.title("Relógio Digital")  # Define o título da janela(window)
 window.iconphoto(True, icon)  # Define o icon como icone da janela
