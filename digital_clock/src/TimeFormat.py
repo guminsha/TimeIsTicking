@@ -1,6 +1,6 @@
 class TimeFormat:
-    def __init__(self, horario_atual, data_atual, locale, text):
-        self.horario_atual = horario_atual
-        self.data_atual = data_atual
+    def __init__(self, current_time, current_date, locale, text):
+        self.current_time = current_time
+        self.current_date = current_date
         self.locale = locale
         self.text = text

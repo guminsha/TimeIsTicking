@@ -14,9 +14,9 @@ def update_clock():
     """
     setlocale(locale.LC_TIME, list_time[current_radio.get()].locale)  # Acessa a classe do rádio selecionado para
     # definir o idioma
-    current_time = strftime(list_time[current_radio.get()].horario_atual)  # Acessa a classe do rádio selecionado
+    current_time = strftime(list_time[current_radio.get()].current_time)  # Acessa a classe do rádio selecionado
     # para definir a formatação do padrão do horário
-    current_date = strftime(list_time[current_radio.get()].data_atual)  # Acessa a classe do rádio selecionado para
+    current_date = strftime(list_time[current_radio.get()].current_date)  # Acessa a classe do rádio selecionado para
     # definir a formatação do padrão da data
 
     label_time.config(text=current_time)  # Define o texto da label relogio como o horário atual (str current_time)
